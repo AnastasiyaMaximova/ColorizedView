@@ -24,9 +24,9 @@ struct ContentView: View {
             .frame(height: 200)
             .padding(.bottom, 20)
             
-            SliderView(sliderValue: $redSliderValue, sliderColor: .red)
-            SliderView(sliderValue: $greenSliderValue, sliderColor: .green)
-            SliderView(sliderValue: $blueSliderValue, sliderColor: .blue)
+            SliderView(sliderColor: .red, sliderValue: $redSliderValue)
+            SliderView(sliderColor: .green, sliderValue: $greenSliderValue)
+            SliderView(sliderColor: .blue, sliderValue: $blueSliderValue)
             Spacer()
         }
         .padding()
@@ -48,9 +48,8 @@ struct ContentView: View {
 }
 
 struct SliderView: View {
-    
-    @Binding var sliderValue: Double
     var sliderColor: Color
+    @Binding var sliderValue: Double
     
     var body: some View {
         HStack{
